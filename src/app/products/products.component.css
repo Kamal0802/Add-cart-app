@@ -1,0 +1,43 @@
+img{
+    width: 60px;
+    
+}
+
+body{
+    background-image: linear-gradient(#D3D3D3,#2D3436);
+}
+
+.prod-img{
+    width: 8rem;
+    
+}
+img:hover{
+ transition: 0.5s ease;
+    transform: scale(1.2);
+}
+body{
+    overflow-x: hidden;
+}
+
+.e-img{
+    width: 80px;
+}
+
+.row{
+    padding: 20px;
+    text-align: center;
+}
+
+.item:hover{
+    color: rgba(35, 62, 211, 0.67);
+    cursor: pointer;
+}
+
+.card{
+    border-radius: 80px;
+    width: 30rem;
+    border: 2px ;
+}
+
+
+

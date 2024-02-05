@@ -1,0 +1,51 @@
+
+
+<div class="contaier mt-5" *ngIf="cartList.length==0" style="overflow-x: hidden;">
+    <div class="row text-center justify-content-center">
+        <div class="col-md-6">
+            <img src="../../assets/empty-cart.png" alt="" width="200px">
+            
+        </div>
+    </div>
+    <div class="row text-center justify-content-center mt-5">
+        <div class="col-md-6">
+            <button routerLink="/products" class="btn btn-primary">Shop now</button>
+            
+        </div>
+    </div>
+</div>
+
+
+<div class="container mt-5" *ngIf="cartList.length !=0">
+  <div class="table-responsive">
+    <table class="table">
+        <tr class="text-center">
+            <th>S.no</th>
+            <th>product Name</th>
+            <th>product Image</th>
+            <th>Description</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Total</th>
+            <th>Action</th>
+        </tr>
+        <tr *ngFor="let item of cartList let i=index" class="text-center">
+            <td>{{i+1}}</td>
+            <td>{{item.title}}</td>
+            <td><img src="{{item.image}}" alt style="width: 100px;">
+            <td style="width: 25%; " class="pe-2 ps-2">{{item.description}}</td>
+            <td style="width: 12%;">{{item.price}}$</td>
+            <td style="width: 12%;">{{item.quantity}}</td>
+            <td style="width: 12%;">{{item.total}}</td>
+            <td><button class="btn btn-outline-danger" (click)="removeItem(item)"><i class="fa-regular fa-trash-can"></i></button></td>
+        </tr>
+
+        <tr>
+            <td colspan="5"></td>
+            <td> <button  (click)="empty()" class="btn btn-danger">Empty cart</button> </td>
+            <td> <button routerLink="/products" class="btn btn-primary">shop More</button></td>
+            <td>Grand total : {{total}}$</td>
+        </tr>
+    </table>
+  </div>
+</div>

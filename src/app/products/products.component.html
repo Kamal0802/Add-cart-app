@@ -1,0 +1,49 @@
+
+<div style=" background-color: #DEE4EA;">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-6 col-sm-3 item p-3">
+                <img src="../../assets/gift-icon-png-7.png" alt="">
+                <h6 class="mt-2">All products</h6>
+            </div>
+            <div class="col-6 mt-3 col-sm-3  item p-3">
+                <img src="../../assets/electronic-product-png.png" class="e-img" alt="">
+                <h6  class="mt-2">Electronics</h6>
+            </div>
+            <div class="col-6 col-sm-3  item p-3">
+                <img src="../../assets/fashion-icon-png-28.png" alt="">
+                <h6 class="mt-2">fashion</h6>
+            </div>
+            <div class="col-6 col-sm-3  item p-3">
+                <img src="../../assets/3071058.png" alt="">
+                <h6 class="mt-2">jwellery</h6>
+            </div>
+        </div>
+    </div>
+    
+    <div class="container">
+        <div class="row justify-content-center">
+            
+               <ng-container class="col-md-3" *ngFor="let item of productsList">
+                <div class="card m-3 p-5 shadow">
+                    <div class="card-img-top mb-3">
+                        <img src="{{item.image}}" alt="" class="img-fluid prod-img">
+                    </div>
+                    <div class="card-body">
+                        <h5 style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100ch;" class="card-title">{{item.title}}</h5>
+                        <p class="card-text" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100ch;" >{{item.description}}</p>
+                        
+                        <p><strong class="text-info">Price : </strong>{{item.price}}$ &ensp; <Strong class="text-success"> &ensp;Rating : </Strong>{{item.rating.rate}}</p>
+                        
+                    </div>
+                    <div class="d-grid gap-2">
+                        <button class="btn btn-warning md-block lead" (click)=addCart(item) style="border-radius: 20px; padding: 10px;">Add to cart</button>
+                    </div>
+                </div>
+               </ng-container>
+            
+        </div>
+    </div>
+</div>
+
+
